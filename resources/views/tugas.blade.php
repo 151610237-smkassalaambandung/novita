@@ -5,20 +5,17 @@
 </head>
 <body>
 	<br>
-		@foreach($buah as $data)
-			{{$data}}<hr>
+		
+		<td> Daftar : <b>{{$data}}</b> <b>{{$data2}}</b>  </td>
+		@foreach($chen as $data)
+		
+			<li>{{$data}}</li>
+
 		@endforeach
+
+	
 	</br>
-	<br>
-		@foreach($mhidup as $data)
-			{{$data}}<hr>
-		@endforeach
-	</br>
-	<br>
-		@foreach($komp as $data)
-			{{$data}}<hr>
-		@endforeach
-	</br>
+
 			
 </body>
 </html>
