@@ -6,10 +6,12 @@
 <body>
 	<br>
 		
-		<td> Daftar : <b>{{$data}}</b> <b>{{$data2}}</b>  </td>
-		@foreach($chen as $data)
-		
-			<li>{{$data}}</li>
+		<td>Daftar : <b>{{$data}} {{$data2}}</b></br>
+		@foreach($chen as $key)
+
+		<ul>
+			<li>{{$key}}</li>
+		</ul>
 
 		@endforeach
 

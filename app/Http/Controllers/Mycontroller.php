@@ -49,20 +49,28 @@ class Mycontroller extends Controller
     	return view('latihan.buah',compact('buah'));
     }
 
-     public function percobaan7($data,$data2)
+     public function percobaan7($data, $data2 = null)
     {
-        
-    	$baek = ['buah'   => ['Mangga','jeruk','Apel','Anggur','manggis'],
-    	         'hewan' => ['hamster','burung','kucing','tikus','ayam'],
-                 'kucing' => ['persia','anggora'],
-    	         'komp'   => ['hardisk','ram','cpu','processor','mouse']];
-        
-    	$chen =$baek[$data];
-        $chen =$baek[$data2];
+        $array = array ('buah'    => [ 'mangga' => ['harumanis','marijan'],
+                                       'alpukat'=> ['hijau','hitam'],
+                                       'apel'   => ['fuji','hijau']],
 
-
-       
-        return view('tugas',compact('chen','data'));
+    	                 'hewan'   => ['hamster'=> ['Hamtaro','Hamtari'],
+                                       'kucing' => ['persia','anggora'],
+                                       'kelinci'=> ['Anggora','persia']], 
+                          
+    	                 'komputer'=> [ 'asus' => ['456UR','456'],
+                                        'dell' => ['Alienware','Inspiron'],
+                                        'acer' => ['6930','7780']],
+                        );
+        
+    	if ($data){
+            $chen = (array_keys($array[$data]));
+        }
+        if ($data2){
+            $chen = ($array[$data][$data2]);
+        }
+        return view('tugas',compact('chen','data','data2'));
     }
     
 }                                                                                                                                                                                                 
